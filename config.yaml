@@ -1,0 +1,85 @@
+# RECONYX v2.0.4 — Configuration
+# Override any of these values in your local config.yaml or via environment variables.
+
+# ──────────────────────────────────────────────────────────
+# Core Settings
+# ──────────────────────────────────────────────────────────
+version:   "2.0.4"
+developer: "CyberPartha"
+
+timeout:          30    # HTTP request timeout in seconds
+retries:          3     # Number of retries on failure
+concurrency:      20    # Max concurrent async operations
+rate_limit_delay: 0.3   # Seconds between requests to the same host
+amass_timeout:    300   # Timeout for OWASP Amass when enabled (seconds)
+gau_timeout:      45    # Timeout for GAU subprocess (seconds)
+
+# ──────────────────────────────────────────────────────────
+# Output
+# ──────────────────────────────────────────────────────────
+output_base: "results"
+output_file: "recon.txt"
+
+# ──────────────────────────────────────────────────────────
+# Sources
+# Every scan automatically runs all available and configured sources.
+# External tools are automatically detected via shutil.which().
+# ──────────────────────────────────────────────────────────
+sources:
+  # Passive data sources
+  crtsh:          true    # Certificate Transparency — crt.sh
+  alienvault:     true    # AlienVault OTX passive DNS
+  wayback:        true    # Wayback Machine CDX API
+  commoncrawl:    true    # Common Crawl Index
+  hackertarget:   true    # HackerTarget
+
+  # API key sources (enabled when key is provided)
+  virustotal:     false   # Set RECONYX_VT_KEY or VT_API_KEY
+  securitytrails: false   # Set RECONYX_ST_KEY or ST_API_KEY
+
+  # External CLI tools (auto-detected; executed if installed)
+  subfinder:      true    # /usr/bin/subfinder or go install ...
+  amass:          false   # Optional source (8-10+ mins). Enable with --enable-amass
+  assetfinder:    true    # assetfinder binary
+  findomain:      true    # findomain binary
+  gau:            true    # gau binary (optimized timeout)
+
+# ──────────────────────────────────────────────────────────
+# API Keys (prefer environment variables — do NOT commit keys here)
+# ──────────────────────────────────────────────────────────
+api_keys:
+  virustotal:     ""    # $RECONYX_VT_KEY  |  $VT_API_KEY
+  securitytrails: ""    # $RECONYX_ST_KEY  |  $ST_API_KEY
+
+# ──────────────────────────────────────────────────────────
+# Scope
+# ──────────────────────────────────────────────────────────
+scope:
+  allowed_domains:  []     # e.g. ["*.example.com", "api.example.com"]
+  excluded_domains: []     # e.g. ["internal.example.com"]
+  wildcard_scope:   false  # If true, accept all subdomains of the root domain
+
+# ──────────────────────────────────────────────────────────
+# HTTP Probe Settings (ProjectDiscovery HTTPX)
+# Active probing requires explicit authorization (--authorised flag)
+# ──────────────────────────────────────────────────────────
+probe:
+  enabled:          true   # Active when authorised
+  authorised:       false  # Set to true only if permanently authorised
+  threads:          50
+  timeout:          10     # Per-request HTTP timeout in seconds
+  max_time:         120    # Overall HTTPX subprocess deadline in seconds
+  rate_limit:       150    # Requests per second
+  follow_redirects: true
+
+# ──────────────────────────────────────────────────────────
+# Logging
+# ──────────────────────────────────────────────────────────
+log_level: "INFO"   # DEBUG | INFO | WARNING | ERROR
+log_file:  ""       # Leave empty to disable file logging
+
+# ──────────────────────────────────────────────────────────
+# Cache (optional — reduces repeated API calls)
+# ──────────────────────────────────────────────────────────
+cache_enabled: false
+cache_ttl:     3600   # Cache TTL in seconds
