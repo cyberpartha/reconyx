@@ -1,0 +1,12 @@
+{
+  "target": "delberto.com",
+  "mode": "quick",
+  "timestamp": "2026-10-09T11:11:26.715662+00:00",
+  "total_raw": 4,
+  "unique": 4,
+  "new_subdomains": 4,
+  "sources_successful": 3,
+  "sources_failed": 0,
+  "elapsed_seconds": "9.0s",
+  "output_dir": "results/delberto.com"
+}

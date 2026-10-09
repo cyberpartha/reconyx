@@ -1,0 +1,20 @@
+{
+  "hackertarget": {
+    "status": "ok",
+    "count": 4,
+    "elapsed": "1.2s",
+    "label": "HackerTarget"
+  },
+  "crtsh": {
+    "status": "ok",
+    "count": 0,
+    "elapsed": "1.3s",
+    "label": "crt.sh"
+  },
+  "alienvault": {
+    "status": "ok",
+    "count": 0,
+    "elapsed": "8.8s",
+    "label": "AlienVault OTX"
+  }
+}

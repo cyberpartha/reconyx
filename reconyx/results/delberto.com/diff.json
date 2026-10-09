@@ -1,0 +1,21 @@
+{
+  "target": "delberto.com",
+  "scan_id": "20261009T111126Z",
+  "timestamp": "2026-10-09T11:11:26.623755+00:00",
+  "statistics": {
+    "previous_count": 0,
+    "current_count": 4,
+    "new_count": 4,
+    "known_count": 0,
+    "missing_from_latest_scan": 0
+  },
+  "new_subdomains": [
+    "ai.delberto.com",
+    "aimcp.delberto.com",
+    "mcp.delberto.com",
+    "www.delberto.com"
+  ],
+  "known_subdomains": [],
+  "missing_from_latest_scan": [],
+  "note": "missing_from_latest_scan does not imply the subdomain is offline. It may not have been discovered by passive sources this run."
+}
