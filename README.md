@@ -27,7 +27,7 @@
 > 
 > Use this tool **only** on systems and domains that you own or have explicit written permission to assess. Unauthorized scanning, probing, or security testing may violate applicable local, national, and international laws, service agreements, or bug bounty program terms.  
 > 
-> The user is **solely responsible** for ensuring that all reconnaissance and probing activities are fully authorized and strictly within permitted scope. RECONYX and its developer assume no liability for misuse or damage caused by this Tool.
+> The user is **solely responsible** for ensuring that all reconnaissance and probing activities are fully authorized and strictly within permitted scope. RECONYX and its developer assume no liability for misuse or damage caused by this Software.
 
 ---
 
